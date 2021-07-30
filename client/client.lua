@@ -15,7 +15,7 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-    while Config.displayText == true do
+    while Config.displayText do
         local pos = GetEntityCoords(GetPlayerPed(-1), true)
         Citizen.Wait(0)
         for _,v in pairs(Config.Peds) do
@@ -31,9 +31,9 @@ end)
 
 function DrawText3D(x,y,z, text, scl, font) 
 
-    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
-    local dist = GetDistanceBetweenCoords(px,py,pz, x,y,z, 1)
+    local onScreen,_x,_y=World3dToScreen2d(x, y, z)
+    local camX,camY,camZ=table.unpack(GetGameplayCamCoords())
+    local dist = GetDistanceBetweenCoords(camX, camY, camZ, x, y, z, 1)
  
     local scale = (1/dist)*scl
     local fov = (1/GetGameplayCamFov())*100
