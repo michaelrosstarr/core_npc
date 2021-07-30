@@ -55,7 +55,7 @@ function DrawText3D(x,y,z, text, scl, font)
     end
 end
 
-function addNPC(x, y, z, heading, hash, model, heading text, animation)
+function addNPC(x, y, z, heading, hash, model, headingText, animation)
     RequestModel(GetHashKey(model))
     while not HasModelLoaded(GetHashKey(model)) do
         Wait(1)
