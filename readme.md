@@ -31,6 +31,13 @@ Don't forget, if you add multiple peds, you need to add a `,` on all {} except f
 {...}
 ```
 
+Thanks to [BombayV](https://github.com/BombayV), you can now simply set the draw distance for the text spawning and text colour. These can be easily set the config.
+
+## Working on
+- [ ] Easy integration with bt-target
+- [x] Optimize Draw Distance for text [Thanks to BombayV](https://github.com/BombayV)
+- [ ] Optimize ped spawning, delete ped when client moves away
+
 ## Useful Links
 [GTA:V Ped Models and Hashes](https://wiki.rage.mp/index.php?title=Peds)
 <br/>
