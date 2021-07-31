@@ -16,11 +16,11 @@ end)
 
 CreateThread(function()
     while Config.displayText do
-        local pos = GetEntityCoords(PlayerPedId(), true)
+        local pos = GetEntityCoords(PlayerPedId())
         Wait(0)
         for _, v in pairs(Config.Peds) do
             local distance = #(pos - vec3(v[1], v[2], v[3]))
-            if (distance < 20.0)then
+            if (distance < Config.displayDistance) then
                 DrawText3D(x, y, z + 1, "~g~" .. v[7], 1.2, 1)
             end
         end
@@ -56,11 +56,11 @@ end
 function addNPC(x, y, z, heading, hash, model, headingText, animation)
     RequestModel(GetHashKey(model))
     while not HasModelLoaded(GetHashKey(model)) do
-        Wait(1)
+        Wait(15)
     end
     RequestAnimDict(animation)
     while not HasAnimDictLoaded(animation) do
-        Wait(1)
+        Wait(15)
     end
     ped = CreatePed(4, hash, x, y, z - 1, 3374176, false, true)
     SetEntityHeading(ped, heading)
