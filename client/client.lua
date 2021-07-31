@@ -21,7 +21,7 @@ CreateThread(function()
         for _, v in pairs(Config.Peds) do
             local distance = #(pos - vec3(v[1], v[2], v[3]))
             if (distance < Config.displayDistance) then
-                DrawText3D(x, y, z + 1, "~g~" .. v[7], 1.2, 1)
+                DrawText3D(x, y, z + 1, Config.displayColor .. v[7], 1.2, 1)
             end
         end
     end
