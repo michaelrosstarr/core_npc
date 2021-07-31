@@ -22,3 +22,22 @@ Config.updatedPeds = {
         }
     },
 }
+
+Config.useBtTarget = false
+
+Config.btTargetPeds = {
+headingText = "Business Man",
+        model = "a_m_y_business_01",
+        animation = "mini@strip_club@idles@bouncer@base",
+        coords = {
+            x = 123,
+            y = 123,
+            z = 123,
+            heading = 123,
+        },
+        btTarget = {
+            label = Wow...
+            icon = "cup", -- target.lua will include
+            action = "dev:print",
+        }
+}
