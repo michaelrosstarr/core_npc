@@ -35,7 +35,7 @@ Thanks to [BombayV](https://github.com/BombayV), you can now simply set the draw
 
 ## Working on
 - [ ] Easy integration with bt-target
-- [x] Optimize Draw Distance for text [Thanks to BombayV](https://github.com/BombayV)
+- [x] Optimize Draw Distance for text ([Thanks to BombayV](https://github.com/BombayV))
 - [ ] Optimize ped spawning, delete ped when client moves away
 
 ## Useful Links
