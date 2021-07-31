@@ -8,9 +8,19 @@
 -- - 7 : heading text
 -- - 8 : animation string
 
+local colours = {
+    ["blue"] = "~b~", ["green"] = "~g~", ["red"] = "~r~", ["yellow"] = "~y~", ["purple"] = "~p~", ["orange"] = "~o~", ["grey"] = "~c~", ["dark grey"] = "~m~", ["black"] = "~u~"
+}
+
 CreateThread(function()
-    for _, v in pairs(Config.Peds) do
-        addNPC(v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8])
+    while true do
+        local pos = GetEntityCoords(PlayerPedId())
+        for _, v in pairs(Config.Peds) do
+            local distance = #(pos - vec3(v[1], v[2], v[3]))
+            if (distance < Config.displayDistance) then
+                addNPC(v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8])
+            end
+        end
     end
 end)
 
@@ -21,7 +31,7 @@ CreateThread(function()
         for _, v in pairs(Config.Peds) do
             local distance = #(pos - vec3(v[1], v[2], v[3]))
             if (distance < Config.displayDistance) then
-                DrawText3D(x, y, z + 1, Config.displayColor .. v[7], 1.2, 1)
+                DrawText3D(x, y, z + 1, colours[Config.displayColor] .. v[7], 1.2, 1)
             end
         end
     end
