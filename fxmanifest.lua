@@ -1,5 +1,6 @@
 fx_version 'cerulean'
-games { 'gta5' }
+
+game 'gta5'
 
 author 'michaelrosstarr'
 description 'NPC Spawning Script'
@@ -8,8 +9,8 @@ repository 'https://github.com/michaelrosstarr/core_npc'
 
 -- What to run
 client_scripts {
-    'client/client.lua',
-    'config.lua'
+    'config.lua',
+    'client/client.lua'
 }
 
 export 'addNPC'
