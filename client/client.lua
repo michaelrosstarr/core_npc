@@ -8,22 +8,20 @@
 -- - 7 : heading text
 -- - 8 : animation string
 
-Citizen.CreateThread(function()
-    for _,v in pairs(Config.Peds) do
+CreateThread(function()
+    for _, v in pairs(Config.Peds) do
         addNPC(v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8])
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while Config.displayText do
-        local pos = GetEntityCoords(GetPlayerPed(-1), true)
-        Citizen.Wait(0)
-        for _,v in pairs(Config.Peds) do
-            x = v[1]
-            y = v[2]
-            z = v[3]
-            if(Vdist(pos.x, pos.y, pos.z, x, y, z) < 20.0)then
-                DrawText3D(x,y,z+1, "~g~"..v[7], 1.2, 1)
+        local pos = GetEntityCoords(PlayerPedId(), true)
+        Wait(0)
+        for _, v in pairs(Config.Peds) do
+            local distance = #(pos - vec3(v[1], v[2], v[3]))
+            if (distance < 20.0)then
+                DrawText3D(x, y, z + 1, "~g~" .. v[7], 1.2, 1)
             end
         end
     end
@@ -64,10 +62,10 @@ function addNPC(x, y, z, heading, hash, model, headingText, animation)
     while not HasAnimDictLoaded(animation) do
         Wait(1)
     end
-    ped = CreatePed(4, hash,x,y,z-1, 3374176, false, true)
+    ped = CreatePed(4, hash, x, y, z - 1, 3374176, false, true)
     SetEntityHeading(ped, heading)
     FreezeEntityPosition(ped, true)
     SetEntityInvincible(ped, true)
     SetBlockingOfNonTemporaryEvents(ped, true)
-    TaskPlayAnim(ped,animation,"base", 8.0, 0.0, -1, 1, 0, 0, 0, 0)
+    TaskPlayAnim(ped, animation, "base", 8.0, 0.0, -1, 1, 0, 0, 0, 0)
 end
