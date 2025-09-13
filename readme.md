@@ -48,8 +48,3 @@ Using Git Clone is easy (if you have not used it before).
 If you have never used Git before, I would suggest just downloading the files either from the Releases page or the zip file.
 
 `git clone https://github.com/michaelrosstarr/core_npc`
-
-## License
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-<br/>
-This script falls under GNU General Public License v3.0, which means that you can contribute towards this project, modify this script for private use (meaning, you cannot release this script under your own name and claiming that you created it), rather contribute your changes by doing a Pull Request. Read more about Pull Requests [here](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
